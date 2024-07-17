@@ -10,25 +10,24 @@ function createGrid() {
     gridSpanOutput.textContent = gridSlider.value;
   });
   
-  const cellsPerRow = +prompt("Enter dimensions (e.g. 4 for 4x4 grid): ", "6");
+  const cellsPerRow = +prompt("Enter dimensions (e.g. 4 for 4x4 grid): ", "16");
   let containerWidth = calculateContainerWidth(cellsPerRow);
   setContainerWidth(containerWidth);
   const totalCellNumber = (cellsPerRow * cellsPerRow);
-  const rowCellsAndBreakDiv = cellsPerRow + 1;
 
   for (let i = 0; i < totalCellNumber; i++) {
     const div = document.createElement("div");
     div.classList.add("active");
 
     
-    div.style.cssText = "border: 0.1px solid black; height: 2rem; width: 2rem";
+    div.style.cssText = "border: 0.1px solid black; height: 1.3rem; width: 1.3rem";
     
     container.appendChild(div);
   }
 }
 
 function calculateContainerWidth(userInput) {
-  let containerWidth = (userInput * 2) + 4;
+  let containerWidth = (userInput * 1.3) + 2;
   console.log(containerWidth);
   return containerWidth;
 }
