@@ -1,7 +1,16 @@
 const container = document.querySelector(".container");
+const gridSlider = document.getElementById("grid-range");
+const gridSpanOutput = document.querySelector(".grid-slider-span");
+
 
 function createGrid() {
-  const cellsPerRow = +prompt("Enter dimensions (e.g. 4 for 4x4 grid): ", "4");
+  container.textContent = "";
+  gridSlider.addEventListener("input", (event)=> {
+    gridSpanOutput.textContent = event.target.value;
+    gridSpanOutput.textContent = gridSlider.value;
+  });
+  
+  const cellsPerRow = +prompt("Enter dimensions (e.g. 4 for 4x4 grid): ", "6");
   let containerWidth = calculateContainerWidth(cellsPerRow);
   setContainerWidth(containerWidth);
   const totalCellNumber = (cellsPerRow * cellsPerRow) + cellsPerRow;
