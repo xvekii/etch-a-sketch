@@ -15,7 +15,7 @@ body {
   flex-wrap: wrap;
   width: 12rem;
   outline: rgb(226 226 226) dashed 0.6rem;
-  padding: 2rem 0rem 2rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   background-color: rgb(252, 202, 252);
 }
 
