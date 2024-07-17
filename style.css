@@ -1,3 +1,17 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.active {
+  background-color: white;
+  min-width: 2rem;
+}
+
+.active:hover {
+  background-color: black;
+}
