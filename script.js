@@ -18,8 +18,6 @@ function createGrid() {
   for (let i = 0; i < totalCellNumber; i++) {
     const div = document.createElement("div");
     div.classList.add("active");
-
-    
     div.style.cssText = "border: 0.1px solid black; height: 1.3rem; width: 1.3rem";
     
     container.appendChild(div);
