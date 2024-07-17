@@ -2,6 +2,8 @@ const container = document.querySelector(".container");
 
 function createGrid() {
   const cellsPerRow = +prompt("Enter dimensions (e.g. 4 for 4x4 grid): ", "4");
+  let containerWidth = calculateContainerWidth(cellsPerRow);
+  setContainerWidth(containerWidth);
   const totalCellNumber = (cellsPerRow * cellsPerRow) + cellsPerRow;
   const rowCellsAndBreakDiv = cellsPerRow + 1;
 
@@ -16,6 +18,17 @@ function createGrid() {
     }
     container.appendChild(div);
   }
+}
+
+function calculateContainerWidth(userInput) {
+  let containerWidth = (userInput * 2) + 4;
+  console.log(containerWidth);
+  return containerWidth;
+}
+
+function setContainerWidth(width) {
+  container.style.width = `${width}rem`;
+  container.style.paddingRight = "2rem";
 }
 
 createGrid();
