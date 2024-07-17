@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .container {
@@ -16,6 +17,15 @@ body {
   outline: rgb(226 226 226) dashed 0.6rem;
   padding: 2rem 0rem 2rem 2rem;
   background-color: rgb(252, 202, 252);
+}
+
+.grid-slider-container {
+  margin-top: 2rem;
+}
+
+.grid-slider-heading {
+  text-align: center;
+  margin: 0.2rem;
 }
 
 .active {
