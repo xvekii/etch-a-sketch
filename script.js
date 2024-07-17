@@ -2,13 +2,18 @@ const container = document.querySelector(".container");
 const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
 const containerWidth = 20.8;
-
 let cellsPerRow = 16;
+
 
 gridSlider.addEventListener("input", (event)=> {
   gridSpanOutput.textContent = event.target.value;
   cellsPerRow = parseInt(event.target.value);
   createGrid();
+});
+
+container.addEventListener("click", (event)=> {
+  let targetDiv = event.target;
+  targetDiv.style.backgroundColor = "black";
 });
 
 function createGrid() {
