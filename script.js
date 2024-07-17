@@ -35,7 +35,6 @@ function calculateContainerWidth(userInput) {
 
 function setContainerWidth(width) {
   container.style.width = `${width}rem`;
-  // container.style.paddingRight = "2rem";
 }
 
 createGrid();
