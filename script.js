@@ -2,11 +2,13 @@ const container = document.querySelector(".container");
 const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
 const containerWidth = 20.8;
+gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
 
 
 gridSlider.addEventListener("input", (event)=> {
-  gridSpanOutput.textContent = event.target.value;
+  let sliderValue = event.target.value;
+  gridSpanOutput.textContent = `${sliderValue} x ${sliderValue}`;
   cellsPerRow = parseInt(event.target.value);
   createGrid();
 });

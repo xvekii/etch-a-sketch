@@ -20,7 +20,12 @@ body {
 }
 
 .grid-slider-container {
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+.grid-slider-para {
+  text-align: center;
+
 }
 
 .active {
