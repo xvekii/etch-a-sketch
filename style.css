@@ -13,7 +13,7 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 12rem;
+  width: 20.8rem;
   outline: rgb(226 226 226) dashed 0.6rem;
   background-color: rgb(252, 202, 252);
 }
