@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 20.8rem;
+  height: 20.8rem;
   outline: rgb(226 226 226) dashed 0.6rem;
   background-color: rgb(252, 202, 252);
 }
