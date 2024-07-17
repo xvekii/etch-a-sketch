@@ -5,6 +5,10 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  width: 12rem;
+  outline: ridge 0.6rem #858181;
+  padding: 2rem 0rem 2rem 2rem;
+  background-color: #fccafc;
 }
 
 .active {

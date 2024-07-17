@@ -12,7 +12,7 @@ function createGrid() {
     if (i % rowCellsAndBreakDiv === 0) {
       div.style.cssText = "border: 0px; height: 0px; width: 100%";
     } else {
-      div.style.cssText = "border: 1px solid black; height: 2rem; width: 2rem";
+      div.style.cssText = "border: 0.1px solid black; height: 2rem; width: 2rem";
     }
     container.appendChild(div);
   }
