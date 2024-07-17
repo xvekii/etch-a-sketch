@@ -27,7 +27,7 @@ function createGrid() {
 }
 
 function calculateContainerWidth(userInput) {
-  let containerWidth = (userInput * 1.3) + 2;
+  let containerWidth = (userInput * 1.3);
   console.log(containerWidth);
   return containerWidth;
 }
