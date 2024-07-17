@@ -5,9 +5,10 @@
 body {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .container {
@@ -17,6 +18,7 @@ body {
   height: 20.8rem;
   outline: rgb(226 226 226) dashed 0.6rem;
   background-color: rgb(252, 202, 252);
+  margin-top: 1.5rem;
 }
 
 .grid-slider-container {
