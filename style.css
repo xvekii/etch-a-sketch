@@ -52,14 +52,16 @@ button {
   flex-direction: column;
 }
 
+input[type="range"] {
+  accent-color: #D3B7F9;
+}
+
 .grid-slider-para {
   text-align: center;
-
 }
 
 .active {
   background-color: white;
-  /* border: 0.1px solid black; */
 }
 
 .active:hover {
