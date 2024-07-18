@@ -4,6 +4,7 @@ const gridSpanOutput = document.querySelector(".grid-slider-span");
 const mainWrapper = document.querySelector(".main-wrapper");
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const colorPicker = document.getElementById("color-picker");
+const eraserBtn = document.querySelector(".eraser-btn");
 let currentColor = "black";
 let rainbowModeOn = false;
 
@@ -40,6 +41,11 @@ function watchColorChange(event) {
   rainbowModeOn = false;
   currentColor = event.target.value;
 }
+
+eraserBtn.addEventListener("click", ()=> {
+  currentColor = "#FFFFFF";
+});
+
 
 function createGrid() {
   container.textContent = "";
