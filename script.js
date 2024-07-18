@@ -1,6 +1,11 @@
 const container = document.querySelector(".container");
 const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
+const mainWrapper = document.querySelector(".main-wrapper");
+const rainbowBtn = document.querySelector(".rainbow-btn");
+let currentColor = "black";
+let rainbowModeOn = false;
+
 const containerWidth = 20.8;
 gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
@@ -13,9 +18,19 @@ gridSlider.addEventListener("input", (event)=> {
   createGrid();
 });
 
-container.addEventListener("click", (event)=> {
+rainbowBtn.addEventListener("click", ()=> {
+  rainbowModeOn = !rainbowModeOn;
+});
+
+mainWrapper.addEventListener("click", (event)=> {
   let targetDiv = event.target;
-  targetDiv.style.backgroundColor = "black";
+  if (targetDiv.classList.contains("active")) {
+    if (rainbowModeOn) {
+      targetDiv.style.backgroundColor = getRandomColor();
+    } else {
+      targetDiv.style.backgroundColor = currentColor;
+    }
+  }
 });
 
 function createGrid() {
@@ -37,6 +52,16 @@ function calculateCellWidth(cellsPerRow) {
   let finalCellWidth = containerWidth / cellsPerRow;
   console.log(finalCellWidth);
   return finalCellWidth;
+}
+
+function getRandomColor() {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 createGrid();
