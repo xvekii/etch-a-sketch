@@ -5,7 +5,10 @@ const mainWrapper = document.querySelector(".main-wrapper");
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const colorPicker = document.getElementById("color-picker");
 const eraserBtn = document.querySelector(".eraser-btn");
+const clearBtn = document.querySelector(".clear-btn");
+
 let currentColor = "black";
+let lastUsedColor = currentColor;
 let rainbowModeOn = false;
 
 const containerWidth = 20.8;
@@ -21,6 +24,7 @@ gridSlider.addEventListener("input", (event)=> {
 });
 
 rainbowBtn.addEventListener("click", ()=> {
+  eraserBtn.style.backgroundColor = "#FFFFFF";
   rainbowModeOn = !rainbowModeOn;
 });
 
@@ -28,22 +32,42 @@ mainWrapper.addEventListener("click", (event)=> {
   let targetDiv = event.target;
   if (targetDiv.classList.contains("active")) {
     if (rainbowModeOn) {
-      targetDiv.style.backgroundColor = getRandomColor();
+      currentColor = getRandomColor();
+      colorPicker.value = currentColor;
+      targetDiv.style.backgroundColor = currentColor;
     } else {
       targetDiv.style.backgroundColor = currentColor;
     }
   }
 });
 
-colorPicker.addEventListener("change", watchColorChange, false);
+colorPicker.addEventListener("input", watchColorChange, false);
 
 function watchColorChange(event) {
   rainbowModeOn = false;
+  eraserBtn.style.backgroundColor = "#FFFFFF";
   currentColor = event.target.value;
+  console.log(currentColor);
 }
 
-eraserBtn.addEventListener("click", ()=> {
-  currentColor = "#FFFFFF";
+eraserBtn.addEventListener("click", (event)=> {
+  let eraserBtncurrentBG = window.getComputedStyle(event.target).backgroundColor;
+  lastUsedColor = currentColor;
+  console.log(eraserBtncurrentBG);
+  if (eraserBtncurrentBG === "rgb(255, 255, 255)") {
+    eraserBtn.style.backgroundColor = lastUsedColor;
+    currentColor = "#FFFFFF";
+  } else {
+    currentColor = eraserBtncurrentBG;
+    eraserBtn.style.backgroundColor = "#FFFFFF";
+  }
+
+  
+});
+
+clearBtn.addEventListener("click", ()=> { 
+  eraserBtn.style.backgroundColor = "#FFFFFF";
+  createGrid();
 });
 
 
@@ -64,7 +88,6 @@ function createGrid() {
 
 function calculateCellWidth(cellsPerRow) {
   let finalCellWidth = containerWidth / cellsPerRow;
-  console.log(finalCellWidth);
   return finalCellWidth;
 }
 
