@@ -23,6 +23,8 @@ body {
 
 .grid-slider-container {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid-slider-para {
@@ -32,7 +34,7 @@ body {
 
 .active {
   background-color: white;
-  border: 0.1px solid black;
+  /* border: 0.1px solid black; */
 }
 
 .active:hover {
