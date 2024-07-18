@@ -3,6 +3,7 @@ const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
 const mainWrapper = document.querySelector(".main-wrapper");
 const rainbowBtn = document.querySelector(".rainbow-btn");
+const colorPicker = document.getElementById("color-picker");
 let currentColor = "black";
 let rainbowModeOn = false;
 
@@ -32,6 +33,13 @@ mainWrapper.addEventListener("click", (event)=> {
     }
   }
 });
+
+colorPicker.addEventListener("change", watchColorChange, false);
+
+function watchColorChange(event) {
+  rainbowModeOn = false;
+  currentColor = event.target.value;
+}
 
 function createGrid() {
   container.textContent = "";
