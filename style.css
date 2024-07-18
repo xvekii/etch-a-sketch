@@ -16,9 +16,31 @@ body {
   flex-wrap: wrap;
   width: 20.8rem;
   height: 20.8rem;
-  outline: rgb(226 226 226) dashed 0.6rem;
   background-color: rgb(252, 202, 252);
   margin-top: 1.5rem;
+  position: relative;
+}
+
+.container::before, 
+.container::after {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  content: "";
+}
+
+.container::before {
+  left: -9.3px;
+  top: -9.1px;
+  border-left: 9px solid rgb(226 226 226);
+  border-top: 9px solid rgb(226 226 226);
+}
+
+.container::after {
+  right: -9.3px;
+  bottom: -9px;
+  border-right: 9px solid rgb(226 226 226);
+  border-bottom: 9px solid rgb(226 226 226);
 }
 
 .btn-container {
