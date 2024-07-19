@@ -72,10 +72,10 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .grid-slider-container {
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -83,6 +83,10 @@ button {
 
 .clear-btn {
   align-self: flex-end;
+}
+
+.grid-slider {
+  margin: 0;
 }
 
 .grid-slider-para {
