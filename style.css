@@ -11,12 +11,17 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+h1 {
+  color: gray;
+  user-select: none;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   width: 20.8rem;
   height: 20.8rem;
-  margin-top: 1.5rem;
+  margin-top: 0.6rem;
   position: relative;
 }
 
@@ -58,6 +63,15 @@ button {
   font-weight: 700;
   box-shadow: 3px 3px 0px 1px rgb(0 0 0);
   text-align: center;
+  transition: transform 0.1s ease, box-shadow 0.1s;
+  user-select: none;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0px 1px rgb(0 0 0);
+  background-color: #D3B7F9;
+  outline-offset: 3px;
 }
 
 #color-picker {
@@ -92,6 +106,7 @@ button {
 .grid-slider-para {
   text-align: center;
   margin-bottom: 0.1rem;
+  user-select: none;
 }
 
 input[type="range"] {

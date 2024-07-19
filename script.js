@@ -27,7 +27,6 @@ gridSlider.addEventListener("input", (event)=> {
 });
 
 rainbowBtn.addEventListener("click", ()=> {
-  eraserBtn.style.backgroundColor = "#FFFFFF";
   rainbowModeOn = !rainbowModeOn;
 });
 
@@ -60,7 +59,6 @@ eraserBtn.addEventListener("click", ()=> {
 });
 
 clearBtn.addEventListener("click", ()=> { 
-  eraserBtn.style.backgroundColor = "#FFFFFF";
   createGrid();
 });
 
