@@ -58,6 +58,7 @@ button {
   background-color: white;
   font-weight: 700;
   box-shadow: 3px 3px 0px 1px rgb(0 0 0);
+  text-align: center;
 }
 
 #color-picker {
@@ -69,17 +70,22 @@ button {
 }
 
 .grid-slider-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 }
 
-input[type="range"] {
-  accent-color: #D3B7F9;
+.clear-btn {
+  align-self: flex-end;
 }
 
 .grid-slider-para {
   text-align: center;
+  margin-bottom: 0.1rem;
+}
+
+input[type="range"] {
+  accent-color: #D3B7F9;
 }
 
 .active {
