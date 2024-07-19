@@ -123,3 +123,10 @@ input[type="range"] {
 .active:hover {
   background-color: black;
 }
+
+/* @media (min-width: 630px) and (max-width: 900px) {
+  .container {
+    width: 26.8rem;
+    height: 26.8rem;
+}
+} */

@@ -9,15 +9,20 @@ const colorBtn = document.querySelector(".color-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
 
-let containerDimensions = container.getBoundingClientRect();
-const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-const containerWidthInRem = containerDimensions.width / rootFontSize;
+let containerWidth = trackWindowSize();
+
+
+function trackWindowSize() {
+  let containerDimensions = container.getBoundingClientRect();
+  let rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  let containerWidthInRem = containerDimensions.width / rootFontSize;
+  return containerWidthInRem;
+}
 
 let currentColor = "black";
 let lastUsedColor = currentColor;
 let rainbowModeOn = false;
 
-const containerWidth = containerWidthInRem;
 gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
 
@@ -48,6 +53,7 @@ mainWrapper.addEventListener("click", (event)=> {
 colorPicker.addEventListener("input", watchColorChange, false);
 
 function watchColorChange(event) {
+  rainbowModeOn = false;
   currentColor = event.target.value;
 }
 
