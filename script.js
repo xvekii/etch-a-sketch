@@ -2,10 +2,13 @@ const container = document.querySelector(".container");
 const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
 const mainWrapper = document.querySelector(".main-wrapper");
+
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const colorPicker = document.getElementById("color-picker");
+const colorBtn = document.querySelector(".color-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
+
 
 let currentColor = "black";
 let lastUsedColor = currentColor;
@@ -33,7 +36,6 @@ mainWrapper.addEventListener("click", (event)=> {
   if (targetDiv.classList.contains("active")) {
     if (rainbowModeOn) {
       currentColor = getRandomColor();
-      colorPicker.value = currentColor;
       targetDiv.style.backgroundColor = currentColor;
     } else {
       targetDiv.style.backgroundColor = currentColor;
@@ -50,19 +52,12 @@ function watchColorChange(event) {
   console.log(currentColor);
 }
 
-eraserBtn.addEventListener("click", (event)=> {
-  let eraserBtncurrentBG = window.getComputedStyle(event.target).backgroundColor;
-  lastUsedColor = currentColor;
-  console.log(eraserBtncurrentBG);
-  if (eraserBtncurrentBG === "rgb(255, 255, 255)") {
-    eraserBtn.style.backgroundColor = lastUsedColor;
-    currentColor = "#FFFFFF";
-  } else {
-    currentColor = eraserBtncurrentBG;
-    eraserBtn.style.backgroundColor = "#FFFFFF";
-  }
+colorBtn.addEventListener("click", ()=> {
+  currentColor = colorPicker.value;
+});
 
-  
+eraserBtn.addEventListener("click", ()=> {
+  currentColor = "#FFFFFF";
 });
 
 clearBtn.addEventListener("click", ()=> { 
