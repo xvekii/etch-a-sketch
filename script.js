@@ -46,17 +46,16 @@ mainWrapper.addEventListener("click", (event)=> {
 colorPicker.addEventListener("input", watchColorChange, false);
 
 function watchColorChange(event) {
-  rainbowModeOn = false;
-  eraserBtn.style.backgroundColor = "#FFFFFF";
   currentColor = event.target.value;
-  console.log(currentColor);
 }
 
 colorBtn.addEventListener("click", ()=> {
+  rainbowModeOn = false;
   currentColor = colorPicker.value;
 });
 
 eraserBtn.addEventListener("click", ()=> {
+  rainbowModeOn = false;
   currentColor = "#FFFFFF";
 });
 
