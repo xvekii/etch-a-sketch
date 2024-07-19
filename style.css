@@ -16,7 +16,6 @@ body {
   flex-wrap: wrap;
   width: 20.8rem;
   height: 20.8rem;
-  background-color: rgb(252, 202, 252);
   margin-top: 1.5rem;
   position: relative;
 }
@@ -69,10 +68,17 @@ button {
   box-shadow: 3px 3px 0px 1px rgb(0 0 0);
 }
 
+.grid-slider-main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .grid-slider-container {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  width: 70%;
 }
 
 .clear-btn {
