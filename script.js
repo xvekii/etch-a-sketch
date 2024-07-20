@@ -9,15 +9,8 @@ const colorBtn = document.querySelector(".color-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
 
-let containerWidth = trackWindowSize();
+let containerWidth = 20.8;
 
-
-function trackWindowSize() {
-  let containerDimensions = container.getBoundingClientRect();
-  let rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-  let containerWidthInRem = containerDimensions.width / rootFontSize;
-  return containerWidthInRem;
-}
 
 let currentColor = "black";
 let lastUsedColor = currentColor;

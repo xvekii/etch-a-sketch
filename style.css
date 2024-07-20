@@ -77,6 +77,14 @@ button:active {
   outline-offset: 3px;
 }
 
+button:focus-visible, 
+#color-picker:focus-visible,
+.grid-slider:focus-visible {
+  outline: 2px dashed #4a2084;
+  outline-offset: -2px;
+}
+
+
 #color-picker {
   height: 2.3rem;
   border: 1px solid black;
@@ -130,10 +138,3 @@ input[type="range"] {
 .active:hover {
   background-color: black;
 }
-
-/* @media (min-width: 630px) and (max-width: 900px) {
-  .container {
-    width: 26.8rem;
-    height: 26.8rem;
-}
-} */
