@@ -9,13 +9,12 @@ const colorBtn = document.querySelector(".color-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
 
-let containerWidth = 20.8;
-
 
 let currentColor = "black";
 let lastUsedColor = currentColor;
 let rainbowModeOn = false;
 
+const containerWidth = 20.8;
 gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
 
