@@ -31,6 +31,7 @@ h1 {
   width: 19px;
   height: 19px;
   content: "";
+  z-index: 1;
 }
 
 .container::before {
@@ -45,6 +46,11 @@ h1 {
   bottom: -9px;
   border-right: 9px solid rgb(226 226 226);
   border-bottom: 9px solid rgb(226 226 226);
+}
+
+.container div {
+  z-index: 2;
+  position: relative; 
 }
 
 .btn-container {
