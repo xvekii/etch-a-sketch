@@ -9,12 +9,17 @@ const colorBtn = document.querySelector(".color-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
 
+const mediaQueryList = window.matchMedia("(min-width: 600px), (min-width: 900px), (min-width: 1600px)");
+
+mediaQueryList.addEventListener("change", ()=> {
+  createGrid();
+});
 
 let currentColor = "black";
 let lastUsedColor = currentColor;
 let rainbowModeOn = false;
 
-const containerWidth = 20.8;
+let containerWidth = 20.8;
 gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
 
@@ -80,8 +85,16 @@ function createGrid() {
 }
 
 function calculateCellWidth(cellsPerRow) {
-  let finalCellWidth = containerWidth / cellsPerRow;
-  return finalCellWidth;
+  let newContainerWidth = container.getBoundingClientRect();
+  containerWidth = newContainerWidth.width;
+
+  let finalCellWidthInPx = containerWidth / cellsPerRow;
+  
+  let rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  let finalCellWidthInRem = finalCellWidthInPx / rootFontSize;
+  
+  console.log(`containerWidth: ${containerWidth}px, finalCellWidth: ${finalCellWidthInRem}rem`);
+  return finalCellWidthInRem;
 }
 
 function getRandomColor() {
