@@ -3,6 +3,8 @@ const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
 const mainWrapper = document.querySelector(".main-wrapper");
 
+const btnContainer = document.querySelector(".btn-container");
+
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const colorPicker = document.getElementById("color-picker");
 const colorBtn = document.querySelector(".color-btn");
@@ -31,9 +33,21 @@ gridSlider.addEventListener("input", (event)=> {
   createGrid();
 });
 
-rainbowBtn.addEventListener("click", ()=> {
+rainbowBtn.addEventListener("click", (event)=> {
+  toggleClickedBtnStyle(event);
   rainbowModeOn = !rainbowModeOn;
 });
+
+function toggleClickedBtnStyle(event) {
+  event.target.classList.toggle("last-switched-on");
+  const buttonList = btnContainer.getElementsByClassName("selected");
+  
+  Array.from(buttonList).forEach(button => {
+    if (button !== event.target) {
+      button.classList.remove("last-switched-on");
+    }
+  });
+}
 
 mainWrapper.addEventListener("click", (event)=> {
   let targetDiv = event.target;
@@ -54,12 +68,14 @@ function watchColorChange(event) {
   currentColor = event.target.value;
 }
 
-colorBtn.addEventListener("click", ()=> {
+colorBtn.addEventListener("click", (event)=> {
+  toggleClickedBtnStyle(event);
   rainbowModeOn = false;
   currentColor = colorPicker.value;
 });
 
-eraserBtn.addEventListener("click", ()=> {
+eraserBtn.addEventListener("click", (event)=> {
+  toggleClickedBtnStyle(event);
   rainbowModeOn = false;
   currentColor = "#FFFFFF";
 });

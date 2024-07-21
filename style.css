@@ -90,6 +90,10 @@ button:focus,
   outline-offset: -2px;
 }
 
+.last-switched-on {
+  outline: 2px dashed #4a2084;
+  outline-offset: -2px;
+}
 
 #color-picker {
   height: 2.3rem;
