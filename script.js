@@ -4,7 +4,6 @@ const gridSpanOutput = document.querySelector(".grid-slider-span");
 const mainWrapper = document.querySelector(".main-wrapper");
 
 const btnContainer = document.querySelector(".btn-container");
-
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const colorPicker = document.getElementById("color-picker");
 const colorBtn = document.querySelector(".color-btn");
@@ -84,7 +83,6 @@ clearBtn.addEventListener("click", ()=> {
   createGrid();
 });
 
-
 function createGrid() {
   container.textContent = "";
   
@@ -109,7 +107,6 @@ function calculateCellWidth(cellsPerRow) {
   let rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
   let finalCellWidthInRem = finalCellWidthInPx / rootFontSize;
   
-  console.log(`containerWidth: ${containerWidth}px, finalCellWidth: ${finalCellWidthInRem}rem`);
   return finalCellWidthInRem;
 }
 
