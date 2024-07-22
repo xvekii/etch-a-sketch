@@ -201,7 +201,35 @@ input[type="range"] {
   }
   
   .container {
-    width: 37.8rem;
-    height: 37.8rem;
+    width: 40.8rem;
+    height: 40.8rem;
+  }
+
+  .btn-container {
+    margin-top: 3.3rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+    width: 11.4rem;
+  }
+
+  .grid-slider-main-wrapper {
+    height: 3.1rem;
+  }
+
+  .grid-slider-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 2.7rem;
+  }
+
+  .grid-slider-span {
+    font-size: 1.3rem;
+  }
+
+  #color-picker {
+    height: 2.8rem;
   }
 }
