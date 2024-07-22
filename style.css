@@ -226,39 +226,3 @@ input[type="range"] {
     height: 2.8rem;
   }
 }
-
-@media (orientation: landscape) and (max-width: 1000px) {
-  h1 {
-    font-size: 1.4rem;
-    margin: 0.3rem 0rem;
-  }
-  
-  .container {
-    width: 14.8rem;
-    height: 14.8rem;
-  }
-
-  .btn-container {
-    margin-top: 1.1rem;
-  }
-
-  button {
-    padding: 0.4rem 0.5rem;
-    font-size: 0.8rem;
-    width: auto;
-  }
-
-  .grid-slider-main-wrapper {
-    height: 2.1rem;
-    margin-top: 0.8rem;
-  }
-
-  .grid-slider-span {
-    font-size: 0.8rem;
-  }
-
-  #color-picker {
-    height: 1.8rem;
-    width: 2rem;
-  }
-}
