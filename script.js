@@ -10,7 +10,7 @@ const colorBtn = document.querySelector(".color-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
 
-const mediaQueryList = window.matchMedia("(min-width: 600px), (min-width: 900px), (min-width: 1600px)");
+const mediaQueryList = window.matchMedia("(min-width: 600px), (min-width: 1600px)");
 
 mediaQueryList.addEventListener("change", ()=> {
   createGrid();
