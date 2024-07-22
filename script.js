@@ -1,9 +1,10 @@
+const mainWrapper = document.querySelector(".main-wrapper");
 const container = document.querySelector(".container");
+const btnContainer = document.querySelector(".btn-container");
+
 const gridSlider = document.getElementById("grid-range");
 const gridSpanOutput = document.querySelector(".grid-slider-span");
-const mainWrapper = document.querySelector(".main-wrapper");
 
-const btnContainer = document.querySelector(".btn-container");
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const colorPicker = document.getElementById("color-picker");
 const colorBtn = document.querySelector(".color-btn");
@@ -11,10 +12,6 @@ const eraserBtn = document.querySelector(".eraser-btn");
 const clearBtn = document.querySelector(".clear-btn");
 
 const mediaQueryList = window.matchMedia("(min-width: 600px), (min-width: 1600px)");
-
-mediaQueryList.addEventListener("change", ()=> {
-  createGrid();
-});
 
 let currentColor = "black";
 let lastUsedColor = currentColor;
@@ -25,28 +22,9 @@ gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
 
 
-gridSlider.addEventListener("input", (event)=> {
-  let sliderValue = event.target.value;
-  gridSpanOutput.textContent = `${sliderValue} x ${sliderValue}`;
-  cellsPerRow = parseInt(event.target.value);
+mediaQueryList.addEventListener("change", ()=> {
   createGrid();
 });
-
-rainbowBtn.addEventListener("click", (event)=> {
-  toggleClickedBtnStyle(event);
-  rainbowModeOn = !rainbowModeOn;
-});
-
-function toggleClickedBtnStyle(event) {
-  event.target.classList.toggle("last-switched-on");
-  const buttonList = btnContainer.getElementsByClassName("selected");
-  
-  Array.from(buttonList).forEach(button => {
-    if (button !== event.target) {
-      button.classList.remove("last-switched-on");
-    }
-  });
-}
 
 mainWrapper.addEventListener("click", (event)=> {
   let targetDiv = event.target;
@@ -60,9 +38,27 @@ mainWrapper.addEventListener("click", (event)=> {
   }
 });
 
+rainbowBtn.addEventListener("click", (event)=> {
+  toggleClickedBtnStyle(event);
+  rainbowModeOn = !rainbowModeOn;
+});
+
+// Apply style to button that was last clicked so that the user keeps track
+function toggleClickedBtnStyle(event) {
+  event.target.classList.toggle("last-switched-on");
+  const buttonList = btnContainer.getElementsByClassName("selected");
+  
+  Array.from(buttonList).forEach(button => {
+    if (button !== event.target) {
+      button.classList.remove("last-switched-on");
+    }
+  });
+}
+
 colorPicker.addEventListener("input", watchColorChange, false);
 
 function watchColorChange(event) {
+  toggleClickedBtnStyle(event);
   rainbowModeOn = false;
   currentColor = event.target.value;
 }
@@ -77,6 +73,13 @@ eraserBtn.addEventListener("click", (event)=> {
   toggleClickedBtnStyle(event);
   rainbowModeOn = false;
   currentColor = "#FFFFFF";
+});
+
+gridSlider.addEventListener("input", (event)=> {
+  let sliderValue = event.target.value;
+  gridSpanOutput.textContent = `${sliderValue} x ${sliderValue}`;
+  cellsPerRow = parseInt(event.target.value);
+  createGrid();
 });
 
 clearBtn.addEventListener("click", ()=> { 
