@@ -123,4 +123,6 @@ function getRandomColor() {
   return color;
 }
 
-createGrid();
+window.addEventListener("load", () => {
+  createGrid();
+});
