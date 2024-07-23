@@ -22,11 +22,11 @@ gridSpanOutput.textContent = `16 x 16`;
 let cellsPerRow = 16;
 
 
-mediaQueryList.addEventListener("change", ()=> {
+mediaQueryList.addEventListener("change", () => {
   createGrid();
 });
 
-mainWrapper.addEventListener("mousedown", (event)=> {
+mainWrapper.addEventListener("mouseover", event => {
   let targetDiv = event.target;
   if (targetDiv.classList.contains("active")) {
     if (rainbowModeOn) {
@@ -38,7 +38,7 @@ mainWrapper.addEventListener("mousedown", (event)=> {
   }
 });
 
-rainbowBtn.addEventListener("click", (event)=> {
+rainbowBtn.addEventListener("click", event => {
   toggleClickedBtnStyle(event);
   rainbowModeOn = !rainbowModeOn;
 });
@@ -63,26 +63,26 @@ function watchColorChange(event) {
   currentColor = event.target.value;
 }
 
-colorBtn.addEventListener("click", (event)=> {
+colorBtn.addEventListener("click", event => {
   toggleClickedBtnStyle(event);
   rainbowModeOn = false;
   currentColor = colorPicker.value;
 });
 
-eraserBtn.addEventListener("click", (event)=> {
+eraserBtn.addEventListener("click", event => {
   toggleClickedBtnStyle(event);
   rainbowModeOn = false;
   currentColor = "#FFFFFF";
 });
 
-gridSlider.addEventListener("input", (event)=> {
+gridSlider.addEventListener("input", event => {
   let sliderValue = event.target.value;
   gridSpanOutput.textContent = `${sliderValue} x ${sliderValue}`;
   cellsPerRow = parseInt(event.target.value);
   createGrid();
 });
 
-clearBtn.addEventListener("click", ()=> { 
+clearBtn.addEventListener("click", () => { 
   createGrid();
 });
 
