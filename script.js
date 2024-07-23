@@ -26,7 +26,7 @@ mediaQueryList.addEventListener("change", ()=> {
   createGrid();
 });
 
-mainWrapper.addEventListener("click", (event)=> {
+mainWrapper.addEventListener("mousedown", (event)=> {
   let targetDiv = event.target;
   if (targetDiv.classList.contains("active")) {
     if (rainbowModeOn) {
