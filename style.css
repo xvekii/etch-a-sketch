@@ -66,6 +66,8 @@ button {
   justify-content: center;
   align-items: center;
   padding: 0.6rem 1.1rem;
+  color: black;
+  width: 5.2rem;
   font-size: 0.9rem;
   border: 1px solid black;
   border-radius: 6px;
@@ -100,6 +102,7 @@ button:focus,
 }
 
 #color-picker {
+  width: 2.7rem;
   height: 2.3rem;
   border: 1px solid black;
   border-radius: 6px;
@@ -225,6 +228,7 @@ input[type="range"] {
   }
 
   #color-picker {
+    width: 3.8rem;
     height: 2.8rem;
   }
 }
